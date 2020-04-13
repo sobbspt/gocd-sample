@@ -1,42 +1,16 @@
 format_version: 9
 pipelines:
-  # build:
-  #   group: defaultGroup
-  #   materials:
-  #     repository:
-  #       git: https://github.com/sobbspt/gocd-sample.git
-  #       branch: master
-  #   stages:
-  #     - test:
-  #         clean_workspace: true
-  #         jobs:
-  #           run-unit-test:
-  #             tasks:
-  #               - exec:
-  #                   command: ./gradlew test
-  My-First-Pipeline-Code:
-    group: defaultGroup
-    label_template: ${COUNT}
-    lock_behavior: none
-    display_order: -1
+  build:
+    group: MyGroup
     materials:
-      git:
+      repository:
         git: https://github.com/sobbspt/gocd-sample.git
-        shallow_clone: false
-        auto_update: true
         branch: master
     stages:
-      - Test:
-          fetch_materials: true
-          keep_artifacts: false
-          clean_workspace: false
-          approval:
-            type: success
-            allow_only_on_success: false
+      - test:
+          clean_workspace: true
           jobs:
-            run-unit-tests:
-              timeout: 0
+            run-unit-test:
               tasks:
                 - exec:
                     command: ./gradlew test
-                    run_if: passed
