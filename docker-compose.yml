@@ -1,0 +1,10 @@
+version: '3'
+services:
+  gocd-server:
+    image: gocd/gocd-server:v20.2.0
+    ports:
+      - '8153:8153'
+  gocd-agent:
+    image: gocd/gocd-agent-docker-dind:v20.2.0
+    environment:
+      - GO_SERVER_URL=http://gocd-server:8153/go
