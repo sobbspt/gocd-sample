@@ -1,6 +1,7 @@
 format_version: 9
 pipelines:
   build:
+    group: MyGroup
     materials:
       repository:
         git: https://github.com/sobbspt/gocd-sample.git
