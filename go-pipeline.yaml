@@ -11,6 +11,6 @@ pipelines:
           clean_workspace: true
           jobs:
             run-unit-test:
-              task:
+              tasks:
                 - exec:
                     command: ./gradlew test
