@@ -1,6 +1,6 @@
 format_version: 9
 pipelines:
-  build:
+  SampleApp:
     group: MyGroup
     materials:
       repository:
