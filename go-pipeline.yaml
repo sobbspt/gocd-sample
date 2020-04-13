@@ -3,3 +3,14 @@ pipelines:
   build:
     group: app
     materials:
+      repository:
+        git: https://github.com/sobbspt/gocd-sample.git
+        branch: master
+    stages:
+      - test:
+          clean_workspace: true
+          jobs:
+            run-unit-test:
+              task:
+                - exec:
+                    command: ./gradlew test
