@@ -13,4 +13,4 @@ pipelines:
             run-unit-test:
               tasks:
                 - exec:
-                    command: ls -la
+                    command: ls
