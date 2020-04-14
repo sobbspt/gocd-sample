@@ -13,6 +13,16 @@ pipelines:
             run-unit-test:
               tasks:
                 - exec:
-                    command: docker
                     arguments:
-                      - "run --rm -u gradle -v '$PWD':/home/gradle/project -w /home/gradle/project gradle gradle test"
+                      - run
+                      - --rm
+                      - -u
+                      - gradle
+                      - -v
+                      - $PWD:/home/gradle/project
+                      - -w
+                      - /home/gradle/project
+                      - gradle
+                      - gradle
+                      - test
+                    command: docker
