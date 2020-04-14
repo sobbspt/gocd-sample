@@ -19,7 +19,7 @@ pipelines:
                       - -u
                       - gradle
                       - -v
-                      - $PWD:/home/gradle/project
+                      - '$PWD':/home/gradle/project
                       - -w
                       - /home/gradle/project
                       - gradle
